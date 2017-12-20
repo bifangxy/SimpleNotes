@@ -3,6 +3,8 @@ package com.xy.simplenotes;
 import android.app.Application;
 import android.content.Context;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.easeui.EaseUI;
 
@@ -20,6 +22,7 @@ public class MyApplication extends Application {
 
     private static Context applicationContext;
 
+    public static RequestQueue mQueue;
 
     public static MyApplication getInstance() {
         if (mApplication == null) {
@@ -41,9 +44,14 @@ public class MyApplication extends Application {
     }
 
     private void initData() {
+//        initVolley();
         initEase();
         initJPush();
     }
+
+   /* private void initVolley() {
+        mQueue = Volley.newRequestQueue(getApplicationContext());
+    }*/
 
     private void initEase() {
         EMOptions options = new EMOptions();
@@ -56,5 +64,7 @@ public class MyApplication extends Application {
         JPushInterface.init(this);
     }
 
-
+    public static RequestQueue getRequestQueue() {
+        return mQueue;
+    }
 }

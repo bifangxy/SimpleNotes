@@ -1,1 +1,1 @@
-include ':app', ':easeui', ':model', ':api', ':core'
+include ':app', ':easeui'
