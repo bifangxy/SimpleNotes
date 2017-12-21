@@ -2,6 +2,7 @@ package com.xy.simplenotes;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -66,5 +67,11 @@ public class MyApplication extends Application {
 
     public static RequestQueue getRequestQueue() {
         return mQueue;
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }
