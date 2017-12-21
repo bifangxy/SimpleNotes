@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -14,7 +15,7 @@ import com.xy.simplenotes.R;
  * Created by Administrator on 2017/12/20.
  */
 
-public class ActivityBase extends Activity {
+public class ActivityBase extends AppCompatActivity {
     protected boolean useThemeStatusBarColor = true;//是否使用特殊的标题栏背景颜色，android5.0以上可以设置状态栏背景色，如果不使用则使用透明色值
     protected boolean useStatusBarColor = true;
 
